@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>LoveMatch!</h1>
+
+<form method="POST"> 
+    {% csrf_token %}
+    <input type="text" id="user" name="user" placeholder="Nickname" maxlength="50"><br>
+    <input type="text" id="group" name="group" placeholder="Group Password" maxlength="50"><br>
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
