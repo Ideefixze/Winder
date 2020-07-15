@@ -15,11 +15,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path
-from lovematch.views import question_view
-from lovematch.views import startup_view
+from django.contrib.auth import views as auth_views
+from lovematch.views import question_view,startup_view,matches_view
+from users import views as user_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('register/', user_views.register_view, name='register'),
+    path('login/', auth_views.LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('question/', question_view),
-    path('', startup_view)
+    path('match/', matches_view),
+    path('', startup_view, name='start')
 ]
