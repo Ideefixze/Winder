@@ -1,20 +1,22 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="content-section">
-<h1>Question {{ nr }}/{{ maxnr }} for {{ user }} in group {{ group }}</h1>
+<h3>Question {{ nr }}/{{ maxnr }} for {{ user }} in group {{ group }}</h3>
 <p>{{ object.content }}</p>
 <form method="POST">
     {% csrf_token %}
-    <input type="radio" id="4" name="answer" value="4"><label for="4">Completely agree</label><br>
-    <input type="radio" id="3" name="answer" value="3"><label for="3">Somewhat agree</label><br>
-    <input type="radio" id="2" name="answer" value="2"><label for="2">I don't know</label><br>
-    <input type="radio" id="1" name="answer" value="1"><label for="1">Somewhat disagree</label><br>
-    <input type="radio" id="0" name="answer" value="0"><label for="0">Completely disagree</label><br>
+    <input type="radio" id="4" name="answer" value="4"><label class="question-label" for="4">Completely agree</label><br>
+    <input type="radio" id="3" name="answer" value="3"><label class="question-label" for="3">Somewhat agree</label><br>
+    <input type="radio" id="2" name="answer" value="2" checked><label class="question-label" for="2">I don't know</label><br>
+    <input type="radio" id="1" name="answer" value="1"><label class="question-label" for="1">Somewhat disagree</label><br>
+    <input type="radio" id="0" name="answer" value="0"><label class="question-label" for="0">Completely disagree</label><br>
 
     <input type="submit" value="Answer">
 </form>
 {% if nr != "1" %}
-    <a href="/question/?nr={{ nr|add:"-1" }}&group={{ group }}"> Prev </a>
+    <a href="/question/?nr={{ nr|add:"-1" }}&group={{ group }}"> Previous question </a>
 {% endif %}
+<hr>
+<a href="/">Back</a>
 </div>
 {% endblock %}

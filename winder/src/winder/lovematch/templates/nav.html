@@ -1,17 +1,13 @@
-<header class="site-header">
-    <nav class="navbar navbar-expand-md navbar-dark bg-steel fixed-top">
-      <div class="container">
-        <div class="collapse navbar-collapse" id="navbarToggle">
-          <!-- Navbar Right Side -->
-          <div class="navbar-nav">
-            {% if user.is_authenticated %}
-            <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
-            {% else %}
-                <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
-                <a class="nav-item nav-link" href="{% url 'register'%}">Register</a>
-            {% endif %}
-            </div>
-        </div>
-      </div>
-    </nav>
-</header>
+<div class="container">
+  <ul class="navul">
+    
+    {% if user.is_authenticated %}
+    <li class="navli"><a class="nava" href="/">Home</a></li>
+      <li class="navli"><a class="nava" href="{% url 'logout' %}">Logout</a></li>
+    {% else %}
+      <li class="navli"><a class="nava" href="{% url 'login' %}">Login</a></li>
+      <li class="navli"><a class="nava" href="{% url 'register' %}">Register</a></li>
+    {% endif %}
+    
+  </ul> 
+</div>

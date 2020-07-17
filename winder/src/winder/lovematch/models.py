@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 # Create your models here.
 
+
 class Question(models.Model):
     content = models.CharField(max_length=200)
 

@@ -1,12 +1,21 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="content-section">
-    <h1>Find your best match in a group!</h1>
+    <h2>Hi {{user.username}}!</h2>
+    <h4><a href="/user/?user={{user.username}}">Your profile</a></h4>
+    <h4><a href="/settings/?user={{user.username}}">Settings</a></h4>
+    <hr>
+    <h2>Find Matches</h2>
     <form method="POST"> 
         {% csrf_token %}
         <input type="text" id="group" name="group" placeholder="Group Password" maxlength="50"><br>
         <input type="submit" value="Submit">
     </form>
+    <hr>
+    <h2>My Groups</h2>
+    {% for group in previous_groups %}
+        <a href="/match/?group={{ group.group }}">{{group.group}}</a><br>
+    {% endfor %}
 </div>
 
 

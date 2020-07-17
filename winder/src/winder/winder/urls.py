@@ -18,6 +18,8 @@ from django.urls import path, re_path
 from django.contrib.auth import views as auth_views
 from lovematch.views import question_view,startup_view,matches_view
 from users import views as user_views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +28,9 @@ urlpatterns = [
     path('logout/', auth_views.LogoutView.as_view(template_name='logout.html'), name='logout'),
     path('question/', question_view),
     path('match/', matches_view),
+    path('user/', user_views.profile_view),
+    path('settings/', user_views.settings_view),
     path('', startup_view, name='start')
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

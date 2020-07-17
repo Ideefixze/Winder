@@ -2,8 +2,8 @@
 {% block content %}
 <div class="content-section">
     <h2>Matches for {{user.username}} in group {{group}}</h2>
-    {% for key,value in scores.items %}
-        {{key}}: {{value}}<br>
+    {% for score in scores %}
+        {{forloop.counter}}. <a href="/user/?user={{score.0}}">{{score.0}}</a>: {{score.1}}<br>
     {% endfor %}
 </div>
 

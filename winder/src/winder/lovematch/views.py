@@ -22,7 +22,7 @@ def question_view(request):
 
     if request.method=="POST":
         val = int(request.POST.get('answer'))
-        q=Question.objects.get(id=nr)
+        q=Question.objects.all()[nr-1]
         ug=UserGroup.objects.get(user=request.user, group=group)
 
         try:
@@ -38,7 +38,7 @@ def question_view(request):
         return redirect('/question?nr='+str(int(nr)+1)+'&group='+group)
 
     
-    q = Question.objects.get(id=nr)
+    q=Question.objects.all()[nr-1]
     
     context = {
         "object": q,
@@ -57,7 +57,9 @@ def startup_view(request):
         ug[0].save()
         return redirect('/question?nr=1&group='+request.POST.get('group'))
     
-    return render(request, 'begin.html', {})
+    previous_groups=UserGroup.objects.filter(user=request.user)
+    
+    return render(request, 'begin.html', {"previous_groups":previous_groups})
     
 
 @login_required
@@ -73,32 +75,37 @@ def matches_view(request):
     
 
     maxnr = len(Question.objects.all())
-
-    for i in range(1,maxnr+1):
+    questions = Question.objects.all()
+    for i in questions:
         
         try:
-            my_ans_i = Answer.objects.get(usergroup=UserGroup.objects.get(user=request.user, group=group),question__id=i)
+            my_ans_i = Answer.objects.get(usergroup=UserGroup.objects.get(user=request.user, group=group),question=i)
         except:
-            my_ans_i = Answer(usergroup=UserGroup.objects.get(user=request.user, group=group),question=Question.objects.get(id=i),answer=2)
+            my_ans_i = Answer(usergroup=UserGroup.objects.get(user=request.user, group=group),question=i,answer=2)
             my_ans_i.save()
         
         others = UserGroup.objects.filter(group=group).exclude(user=request.user)
 
         for j in others:
             try:
-                other_answer = Answer.objects.get(usergroup=j,question__id=i)
+                other_answer = Answer.objects.get(usergroup=j,question=i)
             except:
-                other_answer = Answer(UserGroup=j,question=Question.objects.get(id=i),answer=2)
+                other_answer = Answer(usergroup=j,question=i,answer=2)
                 other_answer.save()
 
             scoredict.setdefault(j.user.username,0)
             scoredict[j.user.username]+=my_ans_i.score(other_answer)
     
-    for key,value in scoredict.items():
-        scoredict[key] = str(int(float(value/maxnr*100)))+"%"
+    #Sort scores
+    sortedscores = sorted(scoredict.items(), key=lambda x:x[1], reverse=True) 
+
+    #Format scores
+    formatedscores = list()
+    for v in sortedscores:
+        formatedscores.append((v[0], str(int(float(v[1]/maxnr*100)))+"%"))
 
     context = {
-        'scores':scoredict,
+        'scores':formatedscores,
         'group':group
     }
     return render(request, 'matches.html', context)
