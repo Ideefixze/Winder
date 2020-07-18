@@ -25,9 +25,9 @@ SECRET_KEY = '9hlk*k^xg00n2=qpt5c(h7gg@0w-00zn-=****v*3vjrip2#5d'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['34.65.147.80','127.0.0.1']
+ALLOWED_HOSTS = ['34.65.147.80','127.0.0.1','localhost']
 
-
+DEBUG_PROPAGATE_EXCEPTIONS = True
 # Application definition
 
 INSTALLED_APPS = [
@@ -50,6 +50,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'winder.urls'
@@ -121,13 +122,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = '/winder_files/static'
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+STATIC_PATH = os.path.join(BASE_DIR, "static")
+STATICFILES_DIRS = ("static",)
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 CRIPSY_TEMPLATE_PACK = 'bootstrap4'
 
 LOGIN_REDIRECT_URL = '/'
 LOGIN_URL='login'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+

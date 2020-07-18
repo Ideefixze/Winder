@@ -20,6 +20,7 @@ from lovematch.views import question_view,startup_view,matches_view
 from users import views as user_views
 from django.conf import settings
 from django.conf.urls.static import static
+from django.views.static import serve 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -30,8 +31,9 @@ urlpatterns = [
     path('match/', matches_view),
     path('user/', user_views.profile_view),
     path('settings/', user_views.settings_view),
-    path('', startup_view, name='start')
-]
-
-urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path('', startup_view, name='start'),
+    re_path(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}), 
+    re_path(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}), 
+] 
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+#urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

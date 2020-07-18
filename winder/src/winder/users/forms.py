@@ -8,4 +8,4 @@ class ProfileSettingsForm(ModelForm):
     #profile_picture = forms.ImageField(label='Profile Picture', required=False)
     class Meta:
         model = Profile
-        fields = ('first_name', 'last_name', 'profile_picture')
+        fields = ('first_name', 'last_name', 'profile_picture','bio')

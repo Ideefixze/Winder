@@ -1,0 +1,58 @@
+body {
+    background: #fafafa;
+    color: #333333;
+    padding-bottom:24px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    color: #444444;
+  }
+  
+  
+  
+  .bg-steel {
+    background-color: #5f788a;
+    color: #333333;
+  }
+  
+  .content-section {
+    background: #ffffff;
+    padding: 10px 20px;
+    border: 4px solid #dddddd;
+    border-radius: 3px;
+    margin-bottom: 20px;
+  }
+
+  footer {
+    text-align:center;
+    position: fixed;
+    bottom:0;
+    width:100%;
+    height:24px;
+    background:#5f788a;
+  }
+  
+  .navul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #5f788a;
+  }
+  
+  .navli {
+    float: left;
+  }
+  
+  .navli .nava {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  /* Change the link color to #111 (black) on hover */
+  .navli .nava:hover {
+    background-color: #394f5f;
+  }
