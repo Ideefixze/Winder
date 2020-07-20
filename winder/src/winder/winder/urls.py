@@ -22,7 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.views.static import serve 
 
-from lovematch.models import loadQuestions
+#from lovematch.models import loadQuestions
 
 urlpatterns = [
     path('admin/', admin.site.urls),
