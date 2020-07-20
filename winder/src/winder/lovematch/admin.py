@@ -6,3 +6,4 @@ from .models import Answer
 admin.site.register(Question)
 admin.site.register(UserGroup)
 admin.site.register(Answer)
+

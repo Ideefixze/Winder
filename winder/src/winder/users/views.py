@@ -12,13 +12,13 @@ def register_view(request):
         form = UserCreationForm(request.POST)
         if form.is_valid():
             new_user=form.save()
-            profile=Profile(user=new_user,first_name="Anonymous",last_name="Anonymous")
+            profile=Profile(user=new_user)
             profile.save()
             username = form.cleaned_data.get('username')
             #new_user = authenticate(username=username,password=form.cleaned_data.get('password1'))
             #login(request, new_user)
             messages.success(request, f'Account created for {username}')
-            return redirect('/')
+            return redirect('/settings/')
     else:
         form = UserCreationForm()
 
@@ -33,7 +33,12 @@ def profile_view(request):
 
 @login_required
 def settings_view(request):
-    profile = Profile.objects.get(user=request.user)
+    try:
+        profile = Profile.objects.get(user=request.user)
+    except:
+        profile = Profile(user=request.user)
+        profile.save()
+
     if request.method=="POST":
         form = ProfileSettingsForm(request.POST, request.FILES, instance=profile)
         if form.is_valid():

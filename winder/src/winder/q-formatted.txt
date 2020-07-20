@@ -1,0 +1,160 @@
+1 
+I am patient.
+2 
+I would like to have children.
+3
+I am hardworking and I try my best to be productive.
+4
+I am more introverted than extraverted.
+5
+I am more emotional than rational.
+6
+I am more an idealist than a realist.
+7
+I like being the centre of attention.
+8
+I am very honest about everything.
+9
+I have many friends.
+10
+I have a strong personality.
+11
+When it comes to my style, I prefer retro than modernity.
+12
+I do not smoke (e-)cigarettes.
+13
+I like to dance.
+14
+I can cook and I like it.
+15
+I am respectful to every human, even if he is disrespectful to me.
+16
+I do not believe in God or some kind of personal higher being.
+17
+I am a liberal.
+18
+I am a vegetarian.
+19
+I love doing small thing to keep myself more healthy.
+20
+I prefer higher culture than pop culture.
+21
+I like playing video games.
+22
+I love rap music.
+23
+I read books.
+24
+Whenever someone ask me for help, I do not leave them behind.
+25
+My philosophy of life is not a nihilistic one.
+26
+Hedonism over ascetism.
+27
+Traditions are harmful.
+28
+I am tall.
+29
+I am slim.
+30
+Doing some kind of sports or outdoor activity is one of my hobbies.
+31
+I am a family person.
+32
+I have an intrest in history.
+33
+I have an intrest in maths, physics or computer science.
+34
+I have an intrest in biology or chemistry.
+35
+I have an intrest in arts.
+36
+I wear glasses.
+37
+I would kiss on my first date.
+38
+I am protective and caring.
+39
+My career is important to me.
+40
+I am an eccentric.
+41
+I would like my partner to be patient.
+42
+I would like my partner to desire being a parent.
+43
+I would like my partner to be a hardworking person.
+44
+I would like my partner to be more introverted than extraverted.
+45
+I would like my partner to be more emotional than rational.
+46
+I would like my partner bo be more an idealist than realist.
+47
+I would like my partner not to be afraid to be a centre of attention. 
+48
+I would like my partner to be honest even if it hurts me.
+49
+I would like my partner to have many friends.
+50
+I would like my partner to have a strong personality.
+51
+I would like my partner to wear classy clothes.
+52
+I would like my partner not to smoke cigarettes.
+53
+I would like my partner to know how to dance.
+54
+I would like my partner to know how to cook.
+55
+I would like my partner to be respectful to other people, regarding of their views.
+56
+I would not like my partner to be religious.
+57
+I would like my partner to be a liberal.
+58
+I would like my partner to be a vegetarian.
+59
+I would like my partner to stay healthy.
+60
+I would like my partner to like higher culture.
+61
+I would like my partner to like playing video games.
+62
+I would like my partner to like rap music.
+63
+I would like my partner to read books.
+64
+I would like my partner to be helpful.
+65
+I would like my partner to have their own values.
+66
+I would like my partner to enjoy life and be kind of hedonistic.
+67
+I would like my partner to be anti-traditional.
+68
+I would like my partner to be tall.
+69
+I would like my partner to be slim.
+70
+I would like my partner to be fit.
+71
+I would like my partner to be a family person.
+72
+I would like my partner to have an intrest in history.
+73
+I would like my partner to have an intrest in maths, physics or computer science.
+74
+I would like my partner to have an intrest in biology or chemistry.
+75
+I would like my partner to have an interst in arts.
+76
+I would like my partner to wear glasses.
+77
+I would like my partner to want to kiss me on our first date.
+78
+I would like my partner to be protective and caring.
+79
+I would like my partner to be a careerist.
+80
+I would like my partner to be somewhat eccentric.
