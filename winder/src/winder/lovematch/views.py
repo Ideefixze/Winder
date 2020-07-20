@@ -107,16 +107,12 @@ def matches_view(request):
         maximumscore += my_ans_i.maxscore(my_ans_i)
     
     #Sort scores
-    sortedscores = sorted(scoredict.items(), key=lambda x:x[1], reverse=True) 
-    #print(sortedscores)
-    #print("MAX: "+str(maximumscore))
+    sortedscores = sorted(scoredict.items(), key=lambda x:x[1], reverse=True)
 
     #Format scores
     formatedscores = list()
     for v in sortedscores:
         formatedscores.append((v[0], str(round(100*v[1]/maximumscore))+"%", Profile.objects.get(user=User.objects.get(username=v[0]))))
-        #print(formatedscores[-1][2])
-        #formatedscores.append((v[0], str(int(float(v[1]/maxnr*100)))+"%"))
 
     context = {
         'scores':formatedscores,

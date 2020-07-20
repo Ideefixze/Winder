@@ -30,11 +30,10 @@ class Answer(models.Model):
     def maxscore(self, other):
         return (self.question.weight + other.question.weight)
 
+#Loads Questions from .txt file, there are 80 questions, 40 for yourself, 40 for your partner
 import os
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-#BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-'''
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 def loadQuestions():
     Question.objects.all().delete()
     with open(os.path.join(BASE_DIR,'q-formatted.txt')) as qfile:
@@ -52,5 +51,3 @@ def loadQuestions():
         else:
             q.pairedquestion=Question.objects.get(id=i-40)
         q.save()
-            
-'''
