@@ -1,5 +1,5 @@
 # Winder
-Simple matchmaker for those looking for love.
+Simple matchmaker for those looking for love. Made in Python (Django), for learning purposes.
 
 How to use?
 
